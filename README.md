@@ -6,7 +6,8 @@ This project incorporates minibig's intial developement of monitoring HDFS. Sinc
 
 Here is the necessary configurations:
 1. On Namenode
-agent config setting at NameNode:
+
+zabbix agent config setting at NameNode:
 
 UserParameter=nn.getlivenode,/usr/bin/python /etc/zabbix/externalscripts/namenode_get_livenode.py
 
@@ -14,7 +15,8 @@ UserParameter=nn.getlivenodedetails,/usr/bin/python /etc/zabbix/externalscripts/
 
 UserParameter=nn.livenodegetstatus[*],/usr/bin/python /etc/zabbix/externalscripts/nn_livenodegetstatus.py $1 $2
 
- cron configuration at NameNode:
+
+cron configuration at NameNode:
 
 * * * * * /etc/zabbix/externalscripts/minibig_zabbix_hdfs_namenode.sh 10.69.130.1
 
@@ -27,7 +29,8 @@ UserParameter=nn.livenodegetstatus[*],/usr/bin/python /etc/zabbix/externalscript
 * * * * * /etc/zabbix/externalscripts/minibig_zabbix_hdfs_datanode.sh 10.69.130.5
 
 2.On Datanode
-agent config setting at DataNode:
+
+zabbix agent config setting at DataNode:
 
 UserParameter=dn.getvolume,/usr/bin/python /etc/zabbix/externalscripts/datanode_get_vol.py
 
